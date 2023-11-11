@@ -1,43 +1,5 @@
 "use client";
 
-// import Link from "next/link";
-// import Logo from "./logo";
-// import ThemeToggler from "../theme";
-// export default function Navbar({ currentUser }: UserMenuProps) {
-//   const theme = "dark";
-
-//   return (
-//     <header>
-//       <nav className="bg-gray-100 flex justify-between px-20 py-4 w-full">
-
-//         <div className="font-semibold font-sans text-[25px]">
-
-//           {currentUser ? (
-//             <span>
-//               Hello,{" "}
-//               <span className="text-emerald-500">{currentUser?.name}</span>
-//             </span>
-//           ) : (
-//             <span>Hello, Welcome!!!!</span>
-//           )}
-
-//         </div>
-
-//         <div className="flex gap-4 items-center border-[1px] justify-center rounded-full py-3 px-7">
-//           <Link href="/">Home</Link>
-//           <Link href={currentUser ? `/create` : `/register`}>Create</Link>
-//           {currentUser ? (
-//             <button onClick={() => signOut()}>Sign out</button>
-//           ) : (
-//             <Link href="/register">Register</Link>
-//           )}
-//         </div>
-//         <ThemeToggler />
-//       </nav>
-//     </header>
-//   );
-// }
-
 import { SafeUser } from "@/types/type";
 import { siteDetails } from "@/utils";
 import { SiteDetails } from "@/utils/types";
@@ -126,7 +88,7 @@ export default function Header({ currentUser }: UserMenuProps) {
                 <nav
                   id="navbarCollapse"
                   className={`absolute right-0 z-30 w-[250px] rounded border-[.5px] bg-white border-body-color/50 py-4 
-                px-6 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100
+                px-6 duration-300 dark:border-white dark:bg-black lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100
 
                 ${
                   navbarOpen
@@ -189,13 +151,16 @@ export default function Header({ currentUser }: UserMenuProps) {
                   <Button onClick={() => signOut()} text="Signout" />
                 ) : (
                   <Link
-                    className="rounded-md bg-primary py-3 px-7 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
+                    className="rounded-full bg-primary py-3 px-7 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp"
                     href="/register"
                   >
                     Register
                   </Link>
                 )}
 
+              </div>
+              <div className="hidden sm:flex xs:flex sm:relative xs:relative sm:right-16 xs:right-16 md:hidden 2xl:hidden">
+                <ThemeToggler />
               </div>
             </div>
           </div>
