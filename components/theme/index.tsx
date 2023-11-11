@@ -3,6 +3,8 @@
 import { useTheme } from "next-themes";
 import { MdDarkMode } from "react-icons/md";
 import { BsSunFill } from "react-icons/bs";
+import {MoonIcon, SunIcon } from "../Icons";
+import { cx } from "@/utils/cx";
 
 export default function ThemeToggler() {
   const { theme, setTheme } = useTheme();
@@ -10,9 +12,12 @@ export default function ThemeToggler() {
   
 
   return (
-    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+    <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}  
+    className={cx("w-8 h-8 ease ml-2 flex items-center justify-center rounded-full p-1", 
+    theme === "dark" ? "bg-white text-black" :
+    "bg-black text-white" )}>
       {
-        theme === 'dark' ? <BsSunFill size={30} /> : <MdDarkMode size={30} />
+        theme === 'dark' ? <SunIcon className={"fill-dark"} /> : <MoonIcon className={"fill-dark"} />
       }
     </button>
   );

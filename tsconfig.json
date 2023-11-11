@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Hooks/useThemeSwitch.tsx", "components/navbar/Navbar.tsx", "components/navbar/logo.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Hooks/useThemeSwitch.tsx", "components/navbar/Navbar.tsx", "components/navbar/logo.tsx", "utils/index.ts"],
   "exclude": ["node_modules"]
 }
