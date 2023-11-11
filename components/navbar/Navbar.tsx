@@ -80,7 +80,7 @@ export default function Header({ currentUser }: UserMenuProps) {
         className={`top-0 left-0 z-40 flex w-full items-center bg-transparent
         ${
           sticky
-          ? "!fixed !z-[9999] !transition bg-gradient-to-b from-white/40 dark:from-black via-indigo-700 to-transparent"
+          ? "!fixed shadow-sticky backdrop-blur-lg dark:shadow-none dark:backdrop-blur-none !z-[9999] !transition bg-gradient-to-b from-white/40 dark:from-black via-indigo-700 to-transparent"
           : "absolute"
         }
         `}
@@ -184,7 +184,6 @@ export default function Header({ currentUser }: UserMenuProps) {
                 {currentUser !== null ? (
                   <Button onClick={() => {}} text="Create" />
                 ) : null}
-                {/* <Button onClick={session !== null ? ()=> signOut() :  () => signIn()} text={session !== null ? "Logout" : "Register"} /> */}
 
                 {currentUser ? (
                   <Button onClick={() => signOut()} text="Signout" />
